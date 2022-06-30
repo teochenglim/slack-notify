@@ -1,0 +1,6 @@
+*.yml
+*.yaml
+config/*.yml
+config/*.yaml
+slack-notify
+bin/
