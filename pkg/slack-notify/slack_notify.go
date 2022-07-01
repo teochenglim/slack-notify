@@ -52,6 +52,13 @@ type Field struct {
 
 func (s *Slack) SendMessage() (error) {
 
+  // best effort to load from viper file again
+  if s.Config.SLACK_WEBHOOK == "" || s.Config.SLACK_MESSAGE == "" {
+    c := config.LoadConfigurations()
+    s.Config.SLACK_WEBHOOK = c.SLACK_WEBHOOK
+    s.Config.SLACK_MESSAGE = c.SLACK_MESSAGE
+  }
+
   if s.Config.SLACK_WEBHOOK == "" {
     fmt.Fprintf(os.Stderr, "Slack Webhook is required. ")
     os.Exit(1)

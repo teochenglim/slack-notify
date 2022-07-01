@@ -23,7 +23,7 @@ type Config struct {
 
 func (c Config) String() string {
 	copy := c
-	// copy.SLACK_WEBHOOK = "*****"
+	copy.SLACK_WEBHOOK = "*****"
 	b, err := json.Marshal(copy)
 	if err != nil {
 		return fmt.Sprintf("error: %s\n", err)
@@ -69,7 +69,7 @@ func LoadConfigurations() *Config {
 	}
 
 	if c.SLACK_VERBOSE == true {
-	 fmt.Printf("Configurations are %v\n", c)
+		fmt.Printf("Configurations are %v\n", c)
 	}
 
 	return c
