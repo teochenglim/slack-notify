@@ -7,7 +7,6 @@
   >
   > The minimum inputs are SLACK_WEBHOOK and SLACK_MESSAGE which is the text you want to send.
 
-
 #### 2. What are the configuration option and priority?
 
   2.1 using config file, file name is "slack-notify.yaml" (Priority lowest)
